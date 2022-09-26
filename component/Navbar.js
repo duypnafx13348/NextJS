@@ -13,11 +13,11 @@ function Navbar(props) {
         </Link>
       </div>
       <div className="nav-link">
-        <Link href="/addtodo">
-          <a>Add Todo</a>
+        <Link href="/todo-v1">
+          <a>Todo V1</a>
         </Link>
-        <Link href="/todo">
-          <a>Todo</a>
+        <Link href="/todo-v2">
+          <a>Todo V2</a>
         </Link>
       </div>
     </nav>

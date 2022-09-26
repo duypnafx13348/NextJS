@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { Box, Button, FormControl, FormGroup, TextField } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -60,7 +60,7 @@ function Todo() {
         console.log(res);
         // setIsLoading(false);
         setRender(!render);
-        router.push("/todo");
+        router.push("/todo-v2");
       })
       .catch((err) => console.log(err));
   }
@@ -79,7 +79,7 @@ function Todo() {
       try {
         const data = await res.json();
         console.log("delete success", data);
-        setRender(!render);
+        // setRender(!render);
       } catch (err) {
         console.log("err");
       }
@@ -88,7 +88,7 @@ function Todo() {
   }
 
   function handleEdit(job) {
-    router.push(`/todo?id=${job.id}`);
+    router.push(`/todo-v2?id=${job.id}`);
     setName(job.name);
     setJob(job.job);
   }
