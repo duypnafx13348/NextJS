@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Box, Button, FormControl, FormGroup, TextField } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Loading from "../../component/Loading";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const api = "https://6329b9024c626ff832c89dc9.mockapi.io/todolist/";
 
@@ -50,7 +50,7 @@ function AddTodo() {
       setJob("");
       setIsLoading(false);
       setRender(!render);
-      router.push("/addtodo");
+      router.push("/todo-v1");
     });
   }
 
@@ -68,7 +68,7 @@ function AddTodo() {
 
   function handleEdit(job) {
     console.log("edit", job);
-    router.push(`/addtodo?id=${job.id}`);
+    router.push(`/todo-v1?id=${job.id}`);
     setName(job.name);
     setJob(job.job);
   }
@@ -76,7 +76,7 @@ function AddTodo() {
   if (isLoading) {
     return (
       <main>
-        <Loading />
+        <CircularProgress />
       </main>
     );
   } else

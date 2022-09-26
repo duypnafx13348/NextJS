@@ -2,7 +2,7 @@
 import { Box, Button, FormControl, FormGroup, TextField } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Loading from "../../component/Loading";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const api = "https://6329b9024c626ff832c89dc9.mockapi.io/todolist/";
 
@@ -95,7 +95,7 @@ function Todo() {
   if (isLoading) {
     return (
       <main>
-        <Loading />
+        <CircularProgress />
       </main>
     );
   } else
