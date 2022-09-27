@@ -3,10 +3,19 @@ import { Button, List, ListItemText } from "@mui/material";
 
 const api = "https://6329b9024c626ff832c89dc9.mockapi.io/todolist/";
 
-export default function TodoList({ jobs, setRender, setShowPopupEdit, setId }) {
-  function handleClickEdit(id) {
+export default function TodoList({
+  jobs,
+  setRender,
+  setShowPopupEdit,
+  setId,
+  setName,
+  setJob,
+}) {
+  function handleClickEdit(job) {
     setShowPopupEdit((prev) => !prev);
-    setId(id);
+    setId(job.id);
+    setName(job.name);
+    setJob(job.job);
   }
   function handleClickDelete(id) {
     fetch(api + id, {
@@ -23,7 +32,7 @@ export default function TodoList({ jobs, setRender, setShowPopupEdit, setId }) {
       {jobs?.map((job) => (
         <ListItemText key={job.id}>
           {job.name} - {job.job}
-          <Button onClick={() => handleClickEdit(job.id)}>Edit</Button>
+          <Button onClick={() => handleClickEdit(job)}>Edit</Button>
           <Button onClick={() => handleClickDelete(job.id)}>Delete</Button>
         </ListItemText>
       ))}

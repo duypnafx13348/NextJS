@@ -9,6 +9,8 @@ import Divider from "@mui/material/Divider";
 const api = "https://6329b9024c626ff832c89dc9.mockapi.io/todolist/";
 
 export default function Add() {
+  const [name, setName] = useState("");
+  const [job, setJob] = useState("");
   const [jobs, setJobs] = useState([]);
   const [render, setRender] = useState(false);
   const [showPopupAdd, setShowPopupAdd] = useState(false);
@@ -36,6 +38,10 @@ export default function Add() {
             buttonName="Add Todo"
             setRender={setRender}
             setShowPopupAdd={setShowPopupAdd}
+            name={name}
+            setName={setName}
+            job={job}
+            setJob={setJob}
           />
         )}
         {showPopupEdit && (
@@ -45,6 +51,10 @@ export default function Add() {
             setRender={setRender}
             id={id}
             setShowPopupEdit={setShowPopupEdit}
+            name={name}
+            setName={setName}
+            job={job}
+            setJob={setJob}
           />
         )}
         <TodoList
@@ -52,6 +62,8 @@ export default function Add() {
           setRender={setRender}
           setShowPopupEdit={setShowPopupEdit}
           setId={setId}
+          setName={setName}
+          setJob={setJob}
         />
       </main>
     </>

@@ -4,16 +4,16 @@ import { Box, Button, FormGroup, TextField } from "@mui/material";
 const api = "https://6329b9024c626ff832c89dc9.mockapi.io/todolist/";
 
 function PopupForm({
-  title,
   buttonName,
   setRender,
   id,
   setShowPopupEdit,
   setShowPopupAdd,
+  name,
+  setName,
+  job,
+  setJob,
 }) {
-  const [name, setName] = useState("");
-  const [job, setJob] = useState("");
-
   function handleSubmit(e) {
     e.preventDefault();
     const newForm = { name, job };

@@ -26,7 +26,7 @@ function Todo() {
   }, [render]);
 
   function handleSubmit(event) {
-    // setIsLoading(!isLoading);
+    setIsLoading(!isLoading);
     event.preventDefault();
     const form = { name, job };
     if (queryId) {
@@ -58,7 +58,7 @@ function Todo() {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        // setIsLoading(false);
+        setIsLoading(false);
         setRender(!render);
         router.push("/todo-v2");
       })
@@ -95,7 +95,7 @@ function Todo() {
   if (isLoading) {
     return (
       <main>
-        <CircularProgress />
+        <CircularProgress disableShrink />
       </main>
     );
   } else
